@@ -1,0 +1,343 @@
+/* --- 1. Global Styles --- */
+@import url('https://googleapis.com');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f9fbf9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container-small {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 2. Navbar Styling --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2e7d32;
+}
+
+.logo span {
+    color: #ff9800;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #2e7d32;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #2e7d32;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* --- 3. Hero Banner Section --- */
+.hero {
+    position: relative;
+    height: 70vh; 
+    min-height: 450px;
+    background-image: url('https://unsplash.com'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+.hero-content h2 {
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #f1f8e9;
+}
+
+.hero-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.main-button {
+    display: inline-block;
+    padding: 14px 35px;
+    background-color: #ff9800;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.main-button:hover {
+    background-color: #e65100;
+    transform: translateY(-3px);
+}
+
+/* --- 4. Fresh Produce Section & Side-by-Side Cards --- */
+.section {
+    padding: 70px 0;
+}
+
+.section-title {
+    font-size: 34px;
+    text-align: center;
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.section-text {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px; 
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eef2ee;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-img img {
+    transform: scale(1.08);
+}
+
+.card-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-info h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.card-info p {
+    color: #777;
+    font-size: 13px;
+}
+
+/* --- 5. About & Contact Sections --- */
+.about, .contact {
+    padding: 70px 0;
+    text-align: center;
+}
+
+.about {
+    background-color: #edf5ee;
+    color: #2e7d32;
+}
+
+.about h2, .contact h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.about p, .contact p {
+    font-size: 16px;
+    color: #444;
+    max-width: 650px;
+    margin: 0 auto 15px auto;
+}
+
+.contact-details {
+    margin-top: 15px;
+    display: inline-block;
+    background: #ffffff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+/* --- 6. Footer --- */
+footer {
+    background-color: #222222;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 13px;
+}
+
+/* --- 7. Responsive Breakpoints --- */
+@media (max-width: 1024px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+    
+    .hero-content h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards-container {
+        grid-template-columns: 1fr; 
+    }
+    
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+}
+/* --- Hamburger Menu Responsive Styles --- */
+.nav-toggle-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #2e7d32;
+    cursor: pointer;
+    order: 2;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle-btn {
+        display: block; /* Mobile par show hoga */
+    }
+    .logo {
+        order: 1;
+    }
+    .nav-links {
+        display: none; /* Default me chhupa rahega */
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        background: #ffffff;
+        padding: 15px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        order: 3;
+    }
+    .nav-links.active {
+        display: flex; /* Click karne par khulega */
+    }
+}
